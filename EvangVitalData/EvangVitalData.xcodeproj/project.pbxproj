@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40B09A87DCB2E77D2FC79211 /* Pods_EvangVitalDataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C4B878E92804CA92252DA1 /* Pods_EvangVitalDataTests.framework */; };
+		531A9D47F4240D5A765323A6 /* Pods_EvangVitalData_EvangVitalDataUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A70BE3A58536830C5B09B28A /* Pods_EvangVitalData_EvangVitalDataUITests.framework */; };
 		BA5734F423DD748F00B00B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5734F323DD748F00B00B89 /* AppDelegate.swift */; };
 		BA5734F623DD748F00B00B89 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5734F523DD748F00B00B89 /* SceneDelegate.swift */; };
 		BA5734F823DD748F00B00B89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5734F723DD748F00B00B89 /* ViewController.swift */; };
@@ -20,6 +22,7 @@
 		BA57352B23DD78C000B00B89 /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57352A23DD78C000B00B89 /* ExamViewModel.swift */; };
 		BA57352D23DD799000B00B89 /* ExamTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57352C23DD799000B00B89 /* ExamTableCell.xib */; };
 		BA57352F23DD799E00B00B89 /* ExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57352E23DD799E00B00B89 /* ExamTableCell.swift */; };
+		CF555936F9D457F2836AE529 /* Pods_EvangVitalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C4FCB44238910E47E71B4D /* Pods_EvangVitalData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24FB4625EE99367F9AE6C711 /* Pods-EvangVitalData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData.release.xcconfig"; path = "Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData.release.xcconfig"; sourceTree = "<group>"; };
+		46C5E82732501BEBA2B08381 /* Pods-EvangVitalDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalDataTests.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalDataTests/Pods-EvangVitalDataTests.debug.xcconfig"; sourceTree = "<group>"; };
+		53C4FCB44238910E47E71B4D /* Pods_EvangVitalData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvangVitalData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		583C66E58D28AD2B56340FDF /* Pods-EvangVitalData-EvangVitalDataUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData-EvangVitalDataUITests.release.xcconfig"; path = "Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests.release.xcconfig"; sourceTree = "<group>"; };
+		61232C265D3BDD66FBD2142A /* Pods-EvangVitalDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalDataTests.release.xcconfig"; path = "Target Support Files/Pods-EvangVitalDataTests/Pods-EvangVitalDataTests.release.xcconfig"; sourceTree = "<group>"; };
+		923206F2075AA64865F36C63 /* Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A70BE3A58536830C5B09B28A /* Pods_EvangVitalData_EvangVitalDataUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvangVitalData_EvangVitalDataUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4470A8D71BE8B8BF2AFD2D /* Pods-EvangVitalData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5734F023DD748F00B00B89 /* EvangVitalData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvangVitalData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5734F323DD748F00B00B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA5734F523DD748F00B00B89 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 		BA57352A23DD78C000B00B89 /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
 		BA57352C23DD799000B00B89 /* ExamTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTableCell.xib; sourceTree = "<group>"; };
 		BA57352E23DD799E00B00B89 /* ExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableCell.swift; sourceTree = "<group>"; };
+		D4C4B878E92804CA92252DA1 /* Pods_EvangVitalDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EvangVitalDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF555936F9D457F2836AE529 /* Pods_EvangVitalData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40B09A87DCB2E77D2FC79211 /* Pods_EvangVitalDataTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,12 +94,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531A9D47F4240D5A765323A6 /* Pods_EvangVitalData_EvangVitalDataUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA704227D5C59F15297775DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53C4FCB44238910E47E71B4D /* Pods_EvangVitalData.framework */,
+				A70BE3A58536830C5B09B28A /* Pods_EvangVitalData_EvangVitalDataUITests.framework */,
+				D4C4B878E92804CA92252DA1 /* Pods_EvangVitalDataTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA5734E723DD748F00B00B89 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +118,8 @@
 				BA57350923DD749100B00B89 /* EvangVitalDataTests */,
 				BA57351423DD749100B00B89 /* EvangVitalDataUITests */,
 				BA5734F123DD748F00B00B89 /* Products */,
+				F113D01919C21C33A0932CF0 /* Pods */,
+				AA704227D5C59F15297775DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +178,20 @@
 			path = Exam;
 			sourceTree = "<group>";
 		};
+		F113D01919C21C33A0932CF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE4470A8D71BE8B8BF2AFD2D /* Pods-EvangVitalData.debug.xcconfig */,
+				24FB4625EE99367F9AE6C711 /* Pods-EvangVitalData.release.xcconfig */,
+				923206F2075AA64865F36C63 /* Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig */,
+				583C66E58D28AD2B56340FDF /* Pods-EvangVitalData-EvangVitalDataUITests.release.xcconfig */,
+				46C5E82732501BEBA2B08381 /* Pods-EvangVitalDataTests.debug.xcconfig */,
+				61232C265D3BDD66FBD2142A /* Pods-EvangVitalDataTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA57351A23DD749100B00B89 /* Build configuration list for PBXNativeTarget "EvangVitalData" */;
 			buildPhases = (
+				FE569FB3B61437CCC5AAB46B /* [CP] Check Pods Manifest.lock */,
 				BA5734EC23DD748F00B00B89 /* Sources */,
 				BA5734ED23DD748F00B00B89 /* Frameworks */,
 				BA5734EE23DD748F00B00B89 /* Resources */,
+				BB7921FD1FDBE60DF6B221A3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -175,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA57351D23DD749100B00B89 /* Build configuration list for PBXNativeTarget "EvangVitalDataTests" */;
 			buildPhases = (
+				8B699C12B4ABEF60805DAA19 /* [CP] Check Pods Manifest.lock */,
 				BA57350223DD749100B00B89 /* Sources */,
 				BA57350323DD749100B00B89 /* Frameworks */,
 				BA57350423DD749100B00B89 /* Resources */,
@@ -193,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA57352023DD749100B00B89 /* Build configuration list for PBXNativeTarget "EvangVitalDataUITests" */;
 			buildPhases = (
+				3CA20FFF01EB3A15D1EB3DA5 /* [CP] Check Pods Manifest.lock */,
 				BA57350D23DD749100B00B89 /* Sources */,
 				BA57350E23DD749100B00B89 /* Frameworks */,
 				BA57350F23DD749100B00B89 /* Resources */,
+				C2051B72C22E0DC6A0A96C59 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +324,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CA20FFF01EB3A15D1EB3DA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvangVitalData-EvangVitalDataUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B699C12B4ABEF60805DAA19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvangVitalDataTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB7921FD1FDBE60DF6B221A3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2051B72C22E0DC6A0A96C59 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE569FB3B61437CCC5AAB46B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EvangVitalData-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA5734EC23DD748F00B00B89 /* Sources */ = {
@@ -460,6 +609,7 @@
 		};
 		BA57351B23DD749100B00B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE4470A8D71BE8B8BF2AFD2D /* Pods-EvangVitalData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +628,7 @@
 		};
 		BA57351C23DD749100B00B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24FB4625EE99367F9AE6C711 /* Pods-EvangVitalData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +647,7 @@
 		};
 		BA57351E23DD749100B00B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46C5E82732501BEBA2B08381 /* Pods-EvangVitalDataTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -518,6 +670,7 @@
 		};
 		BA57351F23DD749100B00B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61232C265D3BDD66FBD2142A /* Pods-EvangVitalDataTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +693,7 @@
 		};
 		BA57352123DD749100B00B89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 923206F2075AA64865F36C63 /* Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +714,7 @@
 		};
 		BA57352223DD749100B00B89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 583C66E58D28AD2B56340FDF /* Pods-EvangVitalData-EvangVitalDataUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
