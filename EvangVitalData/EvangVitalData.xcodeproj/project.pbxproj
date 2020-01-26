@@ -18,6 +18,8 @@
 		BA57352723DD787900B00B89 /* Exam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA57352623DD787900B00B89 /* Exam.storyboard */; };
 		BA57352923DD789D00B00B89 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57352823DD789D00B00B89 /* ExamViewController.swift */; };
 		BA57352B23DD78C000B00B89 /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57352A23DD78C000B00B89 /* ExamViewModel.swift */; };
+		BA57352D23DD799000B00B89 /* ExamTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57352C23DD799000B00B89 /* ExamTableCell.xib */; };
+		BA57352F23DD799E00B00B89 /* ExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57352E23DD799E00B00B89 /* ExamTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		BA57352623DD787900B00B89 /* Exam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exam.storyboard; sourceTree = "<group>"; };
 		BA57352823DD789D00B00B89 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		BA57352A23DD78C000B00B89 /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
+		BA57352C23DD799000B00B89 /* ExamTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTableCell.xib; sourceTree = "<group>"; };
+		BA57352E23DD799E00B00B89 /* ExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,8 @@
 				BA57352623DD787900B00B89 /* Exam.storyboard */,
 				BA57352823DD789D00B00B89 /* ExamViewController.swift */,
 				BA57352A23DD78C000B00B89 /* ExamViewModel.swift */,
+				BA57352C23DD799000B00B89 /* ExamTableCell.xib */,
+				BA57352E23DD799E00B00B89 /* ExamTableCell.swift */,
 			);
 			path = Exam;
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA57350023DD749100B00B89 /* LaunchScreen.storyboard in Resources */,
+				BA57352D23DD799000B00B89 /* ExamTableCell.xib in Resources */,
 				BA57352723DD787900B00B89 /* Exam.storyboard in Resources */,
 				BA5734FD23DD749000B00B89 /* Assets.xcassets in Resources */,
 				BA5734FB23DD748F00B00B89 /* Main.storyboard in Resources */,
@@ -280,6 +287,7 @@
 				BA5734F823DD748F00B00B89 /* ViewController.swift in Sources */,
 				BA57352B23DD78C000B00B89 /* ExamViewModel.swift in Sources */,
 				BA57352923DD789D00B00B89 /* ExamViewController.swift in Sources */,
+				BA57352F23DD799E00B00B89 /* ExamTableCell.swift in Sources */,
 				BA5734F423DD748F00B00B89 /* AppDelegate.swift in Sources */,
 				BA5734F623DD748F00B00B89 /* SceneDelegate.swift in Sources */,
 			);
