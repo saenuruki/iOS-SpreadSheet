@@ -6,4 +6,15 @@
 //  Copyright © 2020 塗木冴. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ExamViewController: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
