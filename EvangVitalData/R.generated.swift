@@ -123,6 +123,41 @@ struct R: Rswift.Validatable {
   }
   #endif
 
+  /// This `R.image` struct is generated, and contains static references to 1 images.
+  struct image {
+    /// Image `btn_navi_back`.
+    static let btn_navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn_navi_back")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "btn_navi_back", bundle: ..., traitCollection: ...)`
+    static func btn_navi_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.btn_navi_back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `CustomNavigationView`.
+    static let customNavigationView = _R.nib._CustomNavigationView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "CustomNavigationView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.customNavigationView) instead")
+    static func customNavigationView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.customNavigationView)
+    }
+    #endif
+
+    static func customNavigationView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomNavigationView? {
+      return R.nib.customNavigationView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomNavigationView
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -139,9 +174,39 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _CustomNavigationView.validate()
+    }
+
+    struct _CustomNavigationView: Rswift.NibResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "CustomNavigationView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomNavigationView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomNavigationView
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "btn_navi_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn_navi_back' is used in nib 'CustomNavigationView', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
