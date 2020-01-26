@@ -11,6 +11,11 @@ import SnapKit
 
 class ExamViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var submitView: UIView!
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
+    
     lazy var customNavigationView: CustomNavigationView = {
         let view = R.nib.customNavigationView.firstView(owner: nil)!
         view.title = "本日の確認問題"
@@ -25,6 +30,7 @@ class ExamViewController: UIViewController {
         super.viewDidLoad()
         self.view.addSubview(customNavigationView)
         configureUI()
+        configureTableView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,5 +47,47 @@ extension ExamViewController {
             make.left.top.right.equalToSuperview()
             make.height.equalTo(viewHeight)
         }
+        
+        let bottomHeight = UIApplication.shared.keyWindow?.rootViewController?.view.safeAreaInsets.bottom ?? 0
+        submitButtonHeightConstraint.constant = bottomHeight + 48
+    }
+    
+    func configureTableView() {
+        tableView.register(R.nib.examTableCell)
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 300
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.reloadData()
+    }
+}
+
+extension ExamViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.examTableCell, for: indexPath) else { return UITableViewCell() }
+        cell.configure()
+        cell.selectionStyle = .none
+        return cell
+    }
+}
+
+extension ExamViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("tapしたよ")
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ExamTableCell.cellHeight
     }
 }

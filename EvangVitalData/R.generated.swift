@@ -138,10 +138,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `CustomNavigationView`.
     static let customNavigationView = _R.nib._CustomNavigationView()
+    /// Nib `ExamTableCell`.
+    static let examTableCell = _R.nib._ExamTableCell()
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "CustomNavigationView", in: bundle)`
@@ -151,9 +153,29 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ExamTableCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.examTableCell) instead")
+    static func examTableCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.examTableCell)
+    }
+    #endif
+
     static func customNavigationView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> CustomNavigationView? {
       return R.nib.customNavigationView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? CustomNavigationView
     }
+
+    static func examTableCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ExamTableCell? {
+      return R.nib.examTableCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ExamTableCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `ExamTableCell`.
+    static let examTableCell: Rswift.ReuseIdentifier<ExamTableCell> = Rswift.ReuseIdentifier(identifier: "ExamTableCell")
 
     fileprivate init() {}
   }
@@ -199,6 +221,20 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "btn_navi_back", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'btn_navi_back' is used in nib 'CustomNavigationView', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _ExamTableCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ExamTableCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ExamTableCell"
+      let name = "ExamTableCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ExamTableCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ExamTableCell
       }
 
       fileprivate init() {}
