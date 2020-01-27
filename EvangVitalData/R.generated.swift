@@ -123,15 +123,33 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `btn_navi_back`.
     static let btn_navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn_navi_back")
+    /// Image `icon_sheet`.
+    static let icon_sheet = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_sheet")
+    /// Image `image_background`.
+    static let image_background = Rswift.ImageResource(bundle: R.hostingBundle, name: "image_background")
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "btn_navi_back", bundle: ..., traitCollection: ...)`
     static func btn_navi_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.btn_navi_back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_sheet", bundle: ..., traitCollection: ...)`
+    static func icon_sheet(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_sheet, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "image_background", bundle: ..., traitCollection: ...)`
+    static func image_background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.image_background, compatibleWith: traitCollection)
     }
     #endif
 
@@ -288,6 +306,7 @@ struct _R: Rswift.Validatable {
       let name = "LaunchScreen"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "image_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'image_background' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
@@ -304,6 +323,8 @@ struct _R: Rswift.Validatable {
       let name = "Main"
 
       static func validate() throws {
+        if UIKit.UIImage(named: "icon_sheet", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_sheet' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "image_background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'image_background' is used in storyboard 'Main', but couldn't be loaded.") }
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
       }
