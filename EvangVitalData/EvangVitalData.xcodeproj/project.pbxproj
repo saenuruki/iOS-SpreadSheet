@@ -25,6 +25,8 @@
 		BA2BC76723DDBFF8001243EB /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76623DDBFF8001243EB /* ExamViewModel.swift */; };
 		BA2BC76923DDC005001243EB /* ExamTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2BC76823DDC005001243EB /* ExamTableCell.xib */; };
 		BA2BC76B23DDC015001243EB /* ExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76A23DDC015001243EB /* ExamTableCell.swift */; };
+		BA2BC76D23DEFE8B001243EB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76C23DEFE8B001243EB /* Constant.swift */; };
+		BA2BC76F23DF03F3001243EB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76E23DF03F2001243EB /* APIRequest.swift */; };
 		F8F4AD9D29B6410266E58F8F /* Pods_EvangVitalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1744DDBE771CE870342C0EC7 /* Pods_EvangVitalData.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,8 @@
 		BA2BC76623DDBFF8001243EB /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
 		BA2BC76823DDC005001243EB /* ExamTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTableCell.xib; sourceTree = "<group>"; };
 		BA2BC76A23DDC015001243EB /* ExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableCell.swift; sourceTree = "<group>"; };
+		BA2BC76C23DEFE8B001243EB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BA2BC76E23DF03F2001243EB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BAD3C9CA01020CC5F9678C48 /* Pods-EvangVitalDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalDataTests.release.xcconfig"; path = "Target Support Files/Pods-EvangVitalDataTests/Pods-EvangVitalDataTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB6B6FE36D325BDBE8FA0343 /* Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD8EE485ED484454CFD1ABC5 /* Pods-EvangVitalData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			children = (
 				BA2BC76023DDBC63001243EB /* CustomNavigationView.xib */,
 				BA2BC76223DDBC6E001243EB /* CustomNavigationView.swift */,
+				BA2BC76C23DEFE8B001243EB /* Constant.swift */,
+				BA2BC76E23DF03F2001243EB /* APIRequest.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -472,11 +478,13 @@
 			files = (
 				BA2BC72E23DD9866001243EB /* ViewController.swift in Sources */,
 				BA2BC76B23DDC015001243EB /* ExamTableCell.swift in Sources */,
+				BA2BC76D23DEFE8B001243EB /* Constant.swift in Sources */,
 				BA2BC75D23DD98EF001243EB /* ExamViewController.swift in Sources */,
 				BA2BC76323DDBC6E001243EB /* CustomNavigationView.swift in Sources */,
 				BA2BC72A23DD9866001243EB /* AppDelegate.swift in Sources */,
 				BA2BC76723DDBFF8001243EB /* ExamViewModel.swift in Sources */,
 				BA2BC72C23DD9866001243EB /* SceneDelegate.swift in Sources */,
+				BA2BC76F23DF03F3001243EB /* APIRequest.swift in Sources */,
 				BA2BC76523DDBE26001243EB /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
