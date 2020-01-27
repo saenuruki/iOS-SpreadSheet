@@ -16,12 +16,11 @@ struct APIRequest {
                 
         var request = URLRequest(url: URL(string: mainAPIHost)!)
         request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request, completionHandler: {
-            (data, response, error) in
-            if error != nil {
-                print(error as Any)
-                return
-            }
+        var vitalArray:[Vital] = []
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let jsonData = data else { return }
+            print("jsonData: \(jsonData)")
+            
             print("response: \(response!)")
             
             let decodedOutput = String(data: data!, encoding: .utf8)!
@@ -29,20 +28,18 @@ struct APIRequest {
             print("decoded output: \(decodedOutput)")
             
             struct NewJson: Codable {
-                var celstr: String
+                var result: [Vital]
             }
             
-            let data: Data = data!
-            let decoder: JSONDecoder = JSONDecoder()
             do {
-                let newJson: NewJson = try decoder.decode(NewJson.self, from: data)
-                print(newJson)
-                print(newJson.celstr)
-                
+                let vitals = try JSONDecoder().decode(NewJson.self, from: jsonData)
+                print(vitals)
+//                vitalArray.append(vitals)
+                print("TODO: - UserDefaultに保存する")
             } catch {
-                print("json convert failed in JSONDecoder", error.localizedDescription)
+                print(error.localizedDescription)
             }
-        })
+        }
         task.resume()
     }
     

@@ -27,6 +27,8 @@
 		BA2BC76B23DDC015001243EB /* ExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76A23DDC015001243EB /* ExamTableCell.swift */; };
 		BA2BC76D23DEFE8B001243EB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76C23DEFE8B001243EB /* Constant.swift */; };
 		BA2BC76F23DF03F3001243EB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76E23DF03F2001243EB /* APIRequest.swift */; };
+		BA2BC77223DF16DA001243EB /* Vital.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC77123DF16DA001243EB /* Vital.swift */; };
+		BA2BC77423DF2647001243EB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2BC77323DF2647001243EB /* Colors.xcassets */; };
 		F8F4AD9D29B6410266E58F8F /* Pods_EvangVitalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1744DDBE771CE870342C0EC7 /* Pods_EvangVitalData.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,8 @@
 		BA2BC76A23DDC015001243EB /* ExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableCell.swift; sourceTree = "<group>"; };
 		BA2BC76C23DEFE8B001243EB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BA2BC76E23DF03F2001243EB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		BA2BC77123DF16DA001243EB /* Vital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vital.swift; sourceTree = "<group>"; };
+		BA2BC77323DF2647001243EB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		BAD3C9CA01020CC5F9678C48 /* Pods-EvangVitalDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalDataTests.release.xcconfig"; path = "Target Support Files/Pods-EvangVitalDataTests/Pods-EvangVitalDataTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB6B6FE36D325BDBE8FA0343 /* Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD8EE485ED484454CFD1ABC5 /* Pods-EvangVitalData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		BA2BC72823DD9866001243EB /* EvangVitalData */ = {
 			isa = PBXGroup;
 			children = (
+				BA2BC77023DF16C7001243EB /* Model */,
 				BA2BC75F23DDBC24001243EB /* Utils */,
 				BA2BC75923DD98C5001243EB /* Exam */,
 				BA2BC72923DD9866001243EB /* AppDelegate.swift */,
@@ -153,6 +158,7 @@
 				BA2BC72D23DD9866001243EB /* ViewController.swift */,
 				BA2BC72F23DD9866001243EB /* Main.storyboard */,
 				BA2BC73223DD9868001243EB /* Assets.xcassets */,
+				BA2BC77323DF2647001243EB /* Colors.xcassets */,
 				BA2BC73423DD9868001243EB /* LaunchScreen.storyboard */,
 				BA2BC73723DD9868001243EB /* Info.plist */,
 				BA2BC76423DDBE26001243EB /* R.generated.swift */,
@@ -199,6 +205,14 @@
 				BA2BC76E23DF03F2001243EB /* APIRequest.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BA2BC77023DF16C7001243EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA2BC77123DF16DA001243EB /* Vital.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D57033267E33E6D7575A755D /* Pods */ = {
@@ -330,6 +344,7 @@
 				BA2BC76123DDBC63001243EB /* CustomNavigationView.xib in Resources */,
 				BA2BC73123DD9866001243EB /* Main.storyboard in Resources */,
 				BA2BC76923DDC005001243EB /* ExamTableCell.xib in Resources */,
+				BA2BC77423DF2647001243EB /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +495,7 @@
 				BA2BC76B23DDC015001243EB /* ExamTableCell.swift in Sources */,
 				BA2BC76D23DEFE8B001243EB /* Constant.swift in Sources */,
 				BA2BC75D23DD98EF001243EB /* ExamViewController.swift in Sources */,
+				BA2BC77223DF16DA001243EB /* Vital.swift in Sources */,
 				BA2BC76323DDBC6E001243EB /* CustomNavigationView.swift in Sources */,
 				BA2BC72A23DD9866001243EB /* AppDelegate.swift in Sources */,
 				BA2BC76723DDBFF8001243EB /* ExamViewModel.swift in Sources */,

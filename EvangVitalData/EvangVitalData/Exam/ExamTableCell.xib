@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="22" id="HUg-Db-y3f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="text"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wj7-cF-bRN">
@@ -36,7 +37,7 @@
                                             <constraint firstAttribute="height" constant="21" id="fv6-hn-dWe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIr-1U-BGZ">
@@ -67,7 +68,7 @@
                                             <constraint firstAttribute="height" constant="21" id="AHc-Hs-wi5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2w-E7-Ymn">
@@ -98,7 +99,7 @@
                                             <constraint firstAttribute="height" constant="21" id="vxe-Vd-6az"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgz-dl-NYf">
@@ -129,7 +130,7 @@
                                             <constraint firstAttribute="height" constant="21" id="iVN-pe-suH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="text"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeL-4d-6Z0">
@@ -152,7 +153,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="47T-IS-kNn" firstAttribute="leading" secondItem="JQ2-j6-nxj" secondAttribute="leading" constant="24" id="BEF-hD-nFi"/>
                             <constraint firstItem="Wj7-cF-bRN" firstAttribute="leading" secondItem="JQ2-j6-nxj" secondAttribute="leading" constant="24" id="DHA-MW-dxU"/>
@@ -172,6 +173,7 @@
                         </constraints>
                     </view>
                 </subviews>
+                <color key="backgroundColor" name="background"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="JQ2-j6-nxj" secondAttribute="trailing" constant="16" id="5h7-tl-9ot"/>
                     <constraint firstAttribute="bottom" secondItem="JQ2-j6-nxj" secondAttribute="bottom" constant="16" id="Qq8-RZ-3Xz"/>
@@ -179,6 +181,7 @@
                     <constraint firstItem="JQ2-j6-nxj" firstAttribute="top" secondItem="i7I-IA-JCw" secondAttribute="top" constant="16" id="lHZ-7a-I20"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" name="background"/>
             <connections>
                 <outlet property="cardView" destination="JQ2-j6-nxj" id="lWq-4N-8TI"/>
                 <outlet property="firstButton" destination="HIr-1U-BGZ" id="iMk-Au-uXD"/>
@@ -198,4 +201,12 @@
             <point key="canvasLocation" x="173.91304347826087" y="124.88839285714285"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

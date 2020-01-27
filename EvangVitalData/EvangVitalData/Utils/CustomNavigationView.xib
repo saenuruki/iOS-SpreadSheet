@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <constraint firstAttribute="height" constant="22" id="gCp-a8-KFm"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" name="text"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd9-ln-2Xb">
@@ -41,7 +42,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <color key="backgroundColor" name="background"/>
             <constraints>
                 <constraint firstItem="0qF-L0-B2j" firstAttribute="centerY" secondItem="hd9-ln-2Xb" secondAttribute="centerY" id="BxB-C6-gbm"/>
                 <constraint firstItem="jWG-bD-Qlh" firstAttribute="bottom" secondItem="ixi-WN-Jem" secondAttribute="bottom" id="CXY-C8-F9h"/>
@@ -62,5 +63,11 @@
     </objects>
     <resources>
         <image name="btn_navi_back" width="24" height="24"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

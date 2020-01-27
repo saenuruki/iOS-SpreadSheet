@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iBl-fA-GZd">
                                 <rect key="frame" x="0.0" y="104" width="414" height="710"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" name="background"/>
+                                <color key="sectionIndexBackgroundColor" name="background"/>
                                 <connections>
                                     <outlet property="dataSource" destination="enS-Pn-C1f" id="4Zk-yT-Vlx"/>
                                     <outlet property="delegate" destination="enS-Pn-C1f" id="6ir-9L-FhV"/>
@@ -51,7 +53,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="vkT-wO-S46" firstAttribute="top" secondItem="iBl-fA-GZd" secondAttribute="bottom" id="91L-dO-F4N"/>
                             <constraint firstAttribute="trailing" secondItem="vkT-wO-S46" secondAttribute="trailing" id="IWv-FJ-62J"/>
@@ -75,4 +77,9 @@
             <point key="canvasLocation" x="92.753623188405811" y="108.48214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     
     @IBAction func tapSheetButton(_ sender: Any) {
         print("TODO: - request Sheet Data")
+        APIRequest.getSheetData()
     }
 }
 
