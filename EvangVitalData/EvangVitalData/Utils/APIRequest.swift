@@ -16,26 +16,16 @@ struct APIRequest {
                 
         var request = URLRequest(url: URL(string: mainAPIHost)!)
         request.httpMethod = "GET"
-        var vitalArray:[Vital] = []
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let jsonData = data else { return }
-            print("jsonData: \(jsonData)")
             
-            print("response: \(response!)")
-            
-            let decodedOutput = String(data: data!, encoding: .utf8)!
-            
-            print("decoded output: \(decodedOutput)")
-            
-            struct NewJson: Codable {
-                var result: [Vital]
+            struct Result: Codable {
+                var vitals: [Vital]
             }
             
             do {
-                let vitals = try JSONDecoder().decode(NewJson.self, from: jsonData)
-                print(vitals)
-//                vitalArray.append(vitals)
-                print("TODO: - UserDefaultに保存する")
+                let results = try JSONDecoder().decode(Result.self, from: jsonData)
+                print(results)
             } catch {
                 print(error.localizedDescription)
             }
@@ -43,7 +33,7 @@ struct APIRequest {
         task.resume()
     }
     
-    func postScoreData() {
+    static func postScoreData() {
         print("TODO: - 後ほど記述する")
     }
 }
