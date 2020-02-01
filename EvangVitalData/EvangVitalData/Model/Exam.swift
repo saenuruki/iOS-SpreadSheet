@@ -27,24 +27,27 @@ struct Exam {
             question = contents[0].name
             questionID = contents[0].id
             answers.removeAll() // MEMO: - 初期化
-            
+
             switch type {
             case .nameJP:
                 questionText = "Q1. 「\(contents[0].name)」の日本語訳はどれでしょうか。"
                 correctAnswer = contents[0].nameJP
-                contents.forEach {
+                let shuffledContents =  Array(contents.shuffled())
+                shuffledContents.forEach {
                     answers.append($0.nameJP)
                 }
             case .discription:
                 questionText = "Q2. 「\(contents[0].name)」の説明はどれでしょうか。"
                 correctAnswer = contents[0].description
-                contents.forEach {
+                let shuffledContents =  Array(contents.shuffled())
+                shuffledContents.forEach {
                     answers.append($0.description)
                 }
             case .usage:
                 questionText = "Q3. 「\(contents[0].name)」の利用例はどれでしょうか。"
                 correctAnswer = contents[0].usage
-                contents.forEach {
+                let shuffledContents =  Array(contents.shuffled())
+                shuffledContents.forEach {
                     answers.append($0.usage)
                 }
             }

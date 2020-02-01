@@ -151,10 +151,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `btn_navi_back`.
     static let btn_navi_back = Rswift.ImageResource(bundle: R.hostingBundle, name: "btn_navi_back")
+    /// Image `icon_circle`.
+    static let icon_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_circle")
+    /// Image `icon_cross`.
+    static let icon_cross = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_cross")
     /// Image `icon_sheet`.
     static let icon_sheet = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon_sheet")
     /// Image `image_background`.
@@ -164,6 +168,20 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "btn_navi_back", bundle: ..., traitCollection: ...)`
     static func btn_navi_back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.btn_navi_back, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_circle", bundle: ..., traitCollection: ...)`
+    static func icon_circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_circle, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "icon_cross", bundle: ..., traitCollection: ...)`
+    static func icon_cross(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.icon_cross, compatibleWith: traitCollection)
     }
     #endif
 
@@ -253,6 +271,7 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _CustomNavigationView.validate()
+      try _ExamTableCell.validate()
     }
 
     struct _CustomNavigationView: Rswift.NibResourceType, Rswift.Validatable {
@@ -274,7 +293,7 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    struct _ExamTableCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+    struct _ExamTableCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
       typealias ReusableType = ExamTableCell
 
       let bundle = R.hostingBundle
@@ -283,6 +302,14 @@ struct _R: Rswift.Validatable {
 
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ExamTableCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ExamTableCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "icon_circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_circle' is used in nib 'ExamTableCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "background", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'background' is used in storyboard 'ExamTableCell', but couldn't be loaded.") }
+          if UIKit.UIColor(named: "text", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'text' is used in storyboard 'ExamTableCell', but couldn't be loaded.") }
+        }
       }
 
       fileprivate init() {}

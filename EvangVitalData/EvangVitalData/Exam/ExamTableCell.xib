@@ -152,6 +152,13 @@
                                     <constraint firstItem="EeL-4d-6Z0" firstAttribute="height" secondItem="8Y6-AT-Dfl" secondAttribute="height" id="ml0-Vw-FmG"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_circle" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-Lg-IqJ">
+                                <rect key="frame" x="127" y="70" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="KxI-Lr-KeP"/>
+                                    <constraint firstAttribute="width" constant="128" id="WBv-i1-dnC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
@@ -166,9 +173,11 @@
                             <constraint firstAttribute="trailing" secondItem="W85-fP-aqL" secondAttribute="trailing" constant="8" id="ZB9-dp-LhT"/>
                             <constraint firstAttribute="trailing" secondItem="Wj7-cF-bRN" secondAttribute="trailing" constant="24" id="baK-w5-qdi"/>
                             <constraint firstAttribute="trailing" secondItem="8Y6-AT-Dfl" secondAttribute="trailing" constant="24" id="e3T-RJ-yWB"/>
+                            <constraint firstItem="ejg-Lg-IqJ" firstAttribute="centerY" secondItem="JQ2-j6-nxj" secondAttribute="centerY" id="eJW-gH-Yr7"/>
                             <constraint firstAttribute="trailing" secondItem="cZA-up-rnq" secondAttribute="trailing" constant="24" id="lam-Kz-AgI"/>
                             <constraint firstItem="47T-IS-kNn" firstAttribute="top" secondItem="Wj7-cF-bRN" secondAttribute="bottom" constant="12" id="s95-71-UCr"/>
                             <constraint firstItem="8Y6-AT-Dfl" firstAttribute="top" secondItem="cZA-up-rnq" secondAttribute="bottom" constant="12" id="wh1-qY-JFz"/>
+                            <constraint firstItem="ejg-Lg-IqJ" firstAttribute="centerX" secondItem="JQ2-j6-nxj" secondAttribute="centerX" id="xHo-M1-8OX"/>
                             <constraint firstAttribute="trailing" secondItem="47T-IS-kNn" secondAttribute="trailing" constant="24" id="zKL-h4-bKT"/>
                         </constraints>
                     </view>
@@ -191,6 +200,7 @@
                 <outlet property="fourthLabel" destination="6IR-uu-jH3" id="lau-Az-ujI"/>
                 <outlet property="fourthView" destination="8Y6-AT-Dfl" id="u8u-1T-ywy"/>
                 <outlet property="questionLabel" destination="W85-fP-aqL" id="i9Y-yx-gen"/>
+                <outlet property="resultMarkImageView" destination="ejg-Lg-IqJ" id="1aA-4d-Lb3"/>
                 <outlet property="secondButton" destination="c2w-E7-Ymn" id="zTt-qS-a5F"/>
                 <outlet property="secondLabel" destination="kyb-Md-WGl" id="bJY-Ic-p0h"/>
                 <outlet property="secondView" destination="47T-IS-kNn" id="U9y-gj-gPa"/>
@@ -202,6 +212,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="icon_circle" width="116" height="116"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

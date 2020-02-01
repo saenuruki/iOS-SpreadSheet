@@ -33,6 +33,9 @@ class ExamTableCell: UITableViewCell {
     @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var thirdLabel: UILabel!
     @IBOutlet weak var fourthLabel: UILabel!
+    @IBOutlet weak var resultMarkImageView: UIImageView!
+    
+    var viewType: ExamViewType = .exam
     
     lazy var allButtons: [UIButton?] = {
         let buttons = [firstButton, secondButton, thirdButton, fourthButton]
@@ -59,58 +62,87 @@ class ExamTableCell: UITableViewCell {
         super.prepareForReuse()
     }
 
-    func configure(by exam: Exam) {
+    func configure(by exam: Exam, viewType: ExamViewType) {
         questionLabel.text = exam.questionText
         firstLabel.text = exam.answers[0]
         secondLabel.text = exam.answers[1]
         thirdLabel.text = exam.answers[2]
         fourthLabel.text = exam.answers[3]
+        self.viewType = viewType
+        
+        switch viewType {
+        case .exam:
+            allViews.forEach { // MEMO: - 初期値は全て同じ色
+                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+            }
+            resultMarkImageView.isHidden = true
+        case .result:
+            setButtonColor(with: exam, row: 0, buttonView: firstView)
+            setButtonColor(with: exam, row: 1, buttonView: secondView)
+            setButtonColor(with: exam, row: 2, buttonView: thirdView)
+            setButtonColor(with: exam, row: 3, buttonView: fourthView)
+            resultMarkImageView.isHidden = false
+            if exam.correctAnswer == exam.selectedAnswer {
+                resultMarkImageView.image = R.image.icon_circle()
+            }
+            else {
+                resultMarkImageView.image = R.image.icon_cross()
+            }
+        }
     }
     
     @IBAction func tapFirstButton(_ sender: Any) {
-        buttonTapHandler(.first)
-        allViews.forEach {
-            if $0 == firstView {
-                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
-            }
-            else {
-                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+        if viewType == .exam {
+            buttonTapHandler(.first)
+            allViews.forEach {
+                if $0 == firstView {
+                    $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+                }
+                else {
+                    $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+                }
             }
         }
     }
     
     @IBAction func tapSecondButton(_ sender: Any) {
-        buttonTapHandler(.second)
-        allViews.forEach {
-            if $0 == secondView {
-                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
-            }
-            else {
-                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+        if viewType == .exam {
+            buttonTapHandler(.second)
+            allViews.forEach {
+                if $0 == secondView {
+                    $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+                }
+                else {
+                    $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+                }
             }
         }
     }
     
     @IBAction func tapThirdButton(_ sender: Any) {
-        buttonTapHandler(.third)
-        allViews.forEach {
-            if $0 == thirdView {
-                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
-            }
-            else {
-                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+        if viewType == .exam {
+            buttonTapHandler(.third)
+            allViews.forEach {
+                if $0 == thirdView {
+                    $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+                }
+                else {
+                    $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+                }
             }
         }
     }
     
     @IBAction func tapFourthButton(_ sender: Any) {
-        buttonTapHandler(.fourth)
-        allViews.forEach {
-            if $0 == fourthView {
-                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
-            }
-            else {
-                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+        if viewType == .exam {
+            buttonTapHandler(.fourth)
+            allViews.forEach {
+                if $0 == fourthView {
+                    $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+                }
+                else {
+                    $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+                }
             }
         }
     }
@@ -132,6 +164,18 @@ fileprivate extension ExamTableCell {
             view.layer.shadowOpacity = 0.2
             view.layer.shadowColor = UIColor.black.cgColor
             view.layer.shadowRadius = 2.0
+        }
+    }
+    
+    func setButtonColor(with exam: Exam, row: Int, buttonView: UIView) {
+        if exam.correctAnswer == exam.answers[0] {
+            buttonView.backgroundColor = UIColor(red: 0/255, green: 199/255, blue: 89/255, alpha: 1.0)
+        }
+        else if exam.selectedAnswer == exam.answers[0] {
+            buttonView.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+        }
+        else {
+            buttonView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
         }
     }
 }

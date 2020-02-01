@@ -14,6 +14,7 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var submitView: UIView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitLabel: UILabel!
     @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
     
     fileprivate private(set) var viewModel: ExamViewModel!
@@ -50,6 +51,7 @@ class ExamViewController: UIViewController {
     @IBAction func tapBottomButton(_ sender: Any) {
         if viewModel.isEnableButton {
             print("MEMO: - 遷移する処理を書く")
+            toggleView()
         }
         else {
             AlertController.shared
@@ -90,6 +92,25 @@ extension ExamViewController {
             submitView.backgroundColor =  UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
         }
     }
+    
+    func toggleView() {
+        switch viewModel.examViewType {
+        case .exam:
+            print("resultに切り替える -> reloadData()")
+            viewModel.examViewType = .result
+            tableView.reloadData()
+            submitView.backgroundColor = UIColor(red: 245/255, green: 166/255, blue: 35/255, alpha: 1.0)
+            submitLabel.text = "次の問題へ"
+        case .result:
+            print("新しい問題を作成する ->  examに切り替える -> reloadData()")
+            viewModel.refreshExams(next: { _ in
+                self.viewModel.examViewType = .exam
+                self.tableView.reloadData()
+            })
+            submitView.backgroundColor =  UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
+            submitLabel.text = "解答する"
+        }
+    }
 }
 
 extension ExamViewController: UITableViewDataSource {
@@ -105,7 +126,7 @@ extension ExamViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.examTableCell, for: indexPath) else { return UITableViewCell() }
-        cell.configure(by: viewModel.exams[indexPath.row])
+        cell.configure(by: viewModel.exams[indexPath.row], viewType: viewModel.examViewType)
         cell.selectionStyle = .none
         cell.buttonTapHandler = { [weak self] examItem in
             guard let wself = self else { return }

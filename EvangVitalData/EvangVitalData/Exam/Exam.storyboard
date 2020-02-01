@@ -71,6 +71,7 @@
                     <connections>
                         <outlet property="submitButton" destination="hi0-ec-voW" id="3BR-Pt-Mtd"/>
                         <outlet property="submitButtonHeightConstraint" destination="owy-Db-Ocp" id="LkW-iq-5on"/>
+                        <outlet property="submitLabel" destination="rfX-tr-VP8" id="s7b-O3-HJp"/>
                         <outlet property="submitView" destination="vkT-wO-S46" id="j5b-eL-ekA"/>
                         <outlet property="tableView" destination="iBl-fA-GZd" id="Eyv-Ux-Ca7"/>
                     </connections>

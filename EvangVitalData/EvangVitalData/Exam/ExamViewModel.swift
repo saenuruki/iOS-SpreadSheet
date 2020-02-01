@@ -8,11 +8,16 @@
 
 import Foundation
 
+enum ExamViewType {
+    case exam, result
+}
+
 class ExamViewModel {
 
     var vitals: [Vital] = []
     var exams: [Exam] = []
     var isEnableButton: Bool = false
+    var examViewType: ExamViewType = .exam
     
     init(by vitals: [Vital]) {
         
