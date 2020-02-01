@@ -50,8 +50,12 @@ class ExamTableCell: UITableViewCell {
         super.prepareForReuse()
     }
 
-    func configure() {
-        print("データを更新するために後ほど記述する")
+    func configure(by exam: Exam) {
+        questionLabel.text = exam.questionText
+        firstLabel.text = exam.answers[0]
+        secondLabel.text = exam.answers[1]
+        thirdLabel.text = exam.answers[2]
+        fourthLabel.text = exam.answers[3]
     }
     
     @IBAction func tapFirstButton(_ sender: Any) {

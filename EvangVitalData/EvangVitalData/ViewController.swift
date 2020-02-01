@@ -21,8 +21,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func tapExamButton(_ sender: Any) {
-        let viewController = ExamViewController.create(by: vitals)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        if vitals.count == 0 {
+            AlertController.shared
+            .show(title: "要求", message: "下のボタンからデータを読み込みましょう！", fromViewController: self, completion: nil)
+        }
+        else {
+            let viewController = ExamViewController.create(by: vitals)
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     @IBAction func tapSheetButton(_ sender: Any) {
