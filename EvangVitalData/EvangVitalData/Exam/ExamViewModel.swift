@@ -12,6 +12,7 @@ class ExamViewModel {
 
     var vitals: [Vital] = []
     var exams: [Exam] = []
+    var isEnableButton: Bool = false
     
     init(by vitals: [Vital]) {
         
@@ -34,7 +35,7 @@ extension ExamViewModel {
         return exam
     }
     
-    func selectItem(card: Int, row: Int) {
+    func selectItem(card: Int, row: Int, next: @escaping (Bool) -> Void) {
         
         if card == 0 {
             var updateExam = exams[0]
@@ -54,5 +55,16 @@ extension ExamViewModel {
             let newExams = [exams[0], exams[1], updateExam]
             self.exams = newExams
         }
+        next(toggleButtonStatus())
+    }
+    
+    func toggleButtonStatus() -> Bool {
+        if exams[0].selectedAnswer != "" && exams[1].selectedAnswer != "" && exams[2].selectedAnswer != "" {
+            isEnableButton =  true // MEMO: - ３問とも回答した場合に「提出ボタンを有効にする」
+        }
+        else {
+            isEnableButton =  false
+        }
+        return isEnableButton
     }
 }

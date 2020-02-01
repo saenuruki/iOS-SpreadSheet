@@ -39,6 +39,9 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hi0-ec-voW">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                        <connections>
+                                            <action selector="tapBottomButton:" destination="enS-Pn-C1f" eventType="touchUpInside" id="14H-6B-y3A"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.78039215689999997" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

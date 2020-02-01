@@ -46,6 +46,16 @@ class ExamViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    @IBAction func tapBottomButton(_ sender: Any) {
+        if viewModel.isEnableButton {
+            print("MEMO: - 遷移する処理を書く")
+        }
+        else {
+            AlertController.shared
+            .show(title: "要求", message: "3問全て回答しましょう！", fromViewController: self, completion: nil)
+        }
+    }
 }
 
 extension ExamViewController {
@@ -60,6 +70,7 @@ extension ExamViewController {
         
         let bottomHeight = UIApplication.shared.keyWindow?.rootViewController?.view.safeAreaInsets.bottom ?? 0
         submitButtonHeightConstraint.constant = bottomHeight + 48
+        toggleButton()
     }
     
     func configureTableView() {
@@ -69,6 +80,15 @@ extension ExamViewController {
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tableView.reloadData()
+    }
+    
+    func toggleButton() {
+        if viewModel.isEnableButton {
+            submitView.backgroundColor =  UIColor(red: 0/255, green: 199/255, blue: 89/255, alpha: 1.0)
+        }
+        else {
+            submitView.backgroundColor =  UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
+        }
     }
 }
 
@@ -90,7 +110,9 @@ extension ExamViewController: UITableViewDataSource {
         cell.buttonTapHandler = { [weak self] examItem in
             guard let wself = self else { return }
             print(examItem.rawValue)
-            wself.viewModel.selectItem(card: indexPath.row, row: examItem.rawValue)
+            wself.viewModel.selectItem(card: indexPath.row, row: examItem.rawValue, next: {(isEnableButton) in
+                wself.toggleButton()
+            })
         }
         return cell
     }
