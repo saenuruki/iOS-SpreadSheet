@@ -50,7 +50,6 @@ class ExamViewController: UIViewController {
     
     @IBAction func tapBottomButton(_ sender: Any) {
         if viewModel.isEnableButton {
-            print("MEMO: - 遷移する処理を書く")
             toggleView()
         }
         else {
@@ -103,6 +102,7 @@ extension ExamViewController {
             submitLabel.text = "次の問題へ"
         case .result:
             print("新しい問題を作成する ->  examに切り替える -> reloadData()")
+            viewModel.isEnableButton = false
             viewModel.refreshExams(next: { _ in
                 self.viewModel.examViewType = .exam
                 self.tableView.reloadData()

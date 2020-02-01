@@ -168,10 +168,10 @@ fileprivate extension ExamTableCell {
     }
     
     func setButtonColor(with exam: Exam, row: Int, buttonView: UIView) {
-        if exam.correctAnswer == exam.answers[0] {
-            buttonView.backgroundColor = UIColor(red: 0/255, green: 199/255, blue: 89/255, alpha: 1.0)
+        if exam.correctAnswer == exam.answers[row] {
+            buttonView.backgroundColor = UIColor(red: 215/255, green: 255/255, blue: 172/255, alpha: 1.0)
         }
-        else if exam.selectedAnswer == exam.answers[0] {
+        else if exam.selectedAnswer == exam.answers[row] {
             buttonView.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
         }
         else {
