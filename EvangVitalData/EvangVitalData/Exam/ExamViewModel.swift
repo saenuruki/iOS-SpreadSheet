@@ -72,4 +72,13 @@ extension ExamViewModel {
         }
         return isEnableButton
     }
+    
+    func postScoreData() {
+        
+        APIRequest.postScoreData(with: exams, success: { message in
+            print(message)
+        }, failure: { error in
+            print(error)
+        })
+    }
 }

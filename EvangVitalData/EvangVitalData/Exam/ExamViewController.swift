@@ -100,6 +100,7 @@ extension ExamViewController {
             tableView.reloadData()
             submitView.backgroundColor = UIColor(red: 245/255, green: 166/255, blue: 35/255, alpha: 1.0)
             submitLabel.text = "次の問題へ"
+            viewModel.postScoreData()
         case .result:
             print("新しい問題を作成する ->  examに切り替える -> reloadData()")
             viewModel.isEnableButton = false
