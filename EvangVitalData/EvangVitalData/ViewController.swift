@@ -13,20 +13,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var sheetView: UIView!
     @IBOutlet weak var examView: UIView!
     
+    var vitals: [Vital] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
 
     @IBAction func tapExamButton(_ sender: Any) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Exam", bundle: nil)//遷移先のStoryboardを設定
-        let nextView = storyboard.instantiateViewController(withIdentifier: "Exam") as! ExamViewController//遷移先のViewControllerを設定
-        self.navigationController?.pushViewController(nextView, animated: true)
-//        self.present(nextView, animated: true, completion: nil)
+        let viewController = ExamViewController.create(by: vitals)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func tapSheetButton(_ sender: Any) {
-        APIRequest.getSheetData()
+        APIRequest.getSheetData(success: { (vitals) in
+            print(vitals)
+            self.vitals = vitals
+            DispatchQueue.main.async {
+                AlertController.shared
+                    .show(title: "取得成功", message: "早速確認問題を開始してみましょう！", fromViewController: self, completion: nil)
+            }
+        },
+        failure: { (error) in
+            print(error)
+            DispatchQueue.main.async {
+                AlertController.shared
+                    .show(title: "取得失敗", message: error, fromViewController: self, completion: nil)
+            }
+        })
     }
 }
 

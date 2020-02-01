@@ -29,7 +29,8 @@
 		BA2BC76F23DF03F3001243EB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76E23DF03F2001243EB /* APIRequest.swift */; };
 		BA2BC77223DF16DA001243EB /* Vital.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC77123DF16DA001243EB /* Vital.swift */; };
 		BA2BC77423DF2647001243EB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2BC77323DF2647001243EB /* Colors.xcassets */; };
-		BA2BC77623E18D9D001243EB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC77523E18D9D001243EB /* UserDefaultsManager.swift */; };
+		BA2BC77823E19259001243EB /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC77723E19259001243EB /* Exam.swift */; };
+		BA2BC77A23E515BE001243EB /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC77923E515BE001243EB /* AlertController.swift */; };
 		F8F4AD9D29B6410266E58F8F /* Pods_EvangVitalData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1744DDBE771CE870342C0EC7 /* Pods_EvangVitalData.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +84,8 @@
 		BA2BC76E23DF03F2001243EB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA2BC77123DF16DA001243EB /* Vital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vital.swift; sourceTree = "<group>"; };
 		BA2BC77323DF2647001243EB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		BA2BC77523E18D9D001243EB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		BA2BC77723E19259001243EB /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		BA2BC77923E515BE001243EB /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		BAD3C9CA01020CC5F9678C48 /* Pods-EvangVitalDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalDataTests.release.xcconfig"; path = "Target Support Files/Pods-EvangVitalDataTests/Pods-EvangVitalDataTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB6B6FE36D325BDBE8FA0343 /* Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData-EvangVitalDataUITests/Pods-EvangVitalData-EvangVitalDataUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD8EE485ED484454CFD1ABC5 /* Pods-EvangVitalData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EvangVitalData.debug.xcconfig"; path = "Target Support Files/Pods-EvangVitalData/Pods-EvangVitalData.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,7 +207,7 @@
 				BA2BC76223DDBC6E001243EB /* CustomNavigationView.swift */,
 				BA2BC76C23DEFE8B001243EB /* Constant.swift */,
 				BA2BC76E23DF03F2001243EB /* APIRequest.swift */,
-				BA2BC77523E18D9D001243EB /* UserDefaultsManager.swift */,
+				BA2BC77923E515BE001243EB /* AlertController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				BA2BC77123DF16DA001243EB /* Vital.swift */,
+				BA2BC77723E19259001243EB /* Exam.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -494,15 +497,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2BC77A23E515BE001243EB /* AlertController.swift in Sources */,
 				BA2BC72E23DD9866001243EB /* ViewController.swift in Sources */,
 				BA2BC76B23DDC015001243EB /* ExamTableCell.swift in Sources */,
-				BA2BC77623E18D9D001243EB /* UserDefaultsManager.swift in Sources */,
 				BA2BC76D23DEFE8B001243EB /* Constant.swift in Sources */,
 				BA2BC75D23DD98EF001243EB /* ExamViewController.swift in Sources */,
 				BA2BC77223DF16DA001243EB /* Vital.swift in Sources */,
 				BA2BC76323DDBC6E001243EB /* CustomNavigationView.swift in Sources */,
 				BA2BC72A23DD9866001243EB /* AppDelegate.swift in Sources */,
 				BA2BC76723DDBFF8001243EB /* ExamViewModel.swift in Sources */,
+				BA2BC77823E19259001243EB /* Exam.swift in Sources */,
 				BA2BC72C23DD9866001243EB /* SceneDelegate.swift in Sources */,
 				BA2BC76F23DF03F3001243EB /* APIRequest.swift in Sources */,
 				BA2BC76523DDBE26001243EB /* R.generated.swift in Sources */,

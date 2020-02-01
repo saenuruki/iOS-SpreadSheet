@@ -12,7 +12,7 @@ struct APIRequest {
 
     static let mainAPIHost: String = Constant.sheetURL
     
-    static func getSheetData(){
+    static func getSheetData(success: @escaping ([Vital]) -> Void, failure: @escaping (String) -> Void) {
                 
         var request = URLRequest(url: URL(string: mainAPIHost)!)
         request.httpMethod = "GET"
@@ -24,10 +24,11 @@ struct APIRequest {
             }
             
             do {
-                let results = try JSONDecoder().decode(Result.self, from: jsonData)
-                print(results)
+                let result = try JSONDecoder().decode(Result.self, from: jsonData)
+//                print(result)
+                success(result.vitals)
             } catch {
-                print(error.localizedDescription)
+                failure(error.localizedDescription)
             }
         }
         task.resume()

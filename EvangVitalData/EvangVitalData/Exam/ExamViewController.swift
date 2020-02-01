@@ -16,6 +16,15 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
     
+    fileprivate private(set) var viewModel: ExamViewModel!
+    
+    static func create(by vitals: [Vital]) -> UIViewController {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Exam", bundle: nil)//遷移先のStoryboardを設定
+        let viewController = storyboard.instantiateViewController(withIdentifier: "Exam") as! ExamViewController//遷移先のViewControllerを設定
+        viewController.viewModel = ExamViewModel(by: vitals)
+        return viewController
+    }
+    
     lazy var customNavigationView: CustomNavigationView = {
         let view = R.nib.customNavigationView.firstView(owner: nil)!
         view.title = "本日の確認問題"
@@ -31,6 +40,7 @@ class ExamViewController: UIViewController {
         self.view.addSubview(customNavigationView)
         configureUI()
         configureTableView()
+        viewModel.refreshExams(next: {_ in })
     }
     
     override func didReceiveMemoryWarning() {
