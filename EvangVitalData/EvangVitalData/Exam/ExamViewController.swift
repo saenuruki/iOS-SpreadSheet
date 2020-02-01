@@ -87,6 +87,11 @@ extension ExamViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.examTableCell, for: indexPath) else { return UITableViewCell() }
         cell.configure(by: viewModel.exams[indexPath.row])
         cell.selectionStyle = .none
+        cell.buttonTapHandler = { [weak self] examItem in
+            guard let wself = self else { return }
+            print(examItem.rawValue)
+            wself.viewModel.selectItem(card: indexPath.row, row: examItem.rawValue)
+        }
         return cell
     }
 }

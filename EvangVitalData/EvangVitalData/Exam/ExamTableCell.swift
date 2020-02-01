@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum ExamItem: Int {
+    case first = 0
+    case second
+    case third
+    case fourth
+}
+
 class ExamTableCell: UITableViewCell {
     
     static let cellHeight: CGFloat = 300
@@ -40,6 +47,8 @@ class ExamTableCell: UITableViewCell {
         return labels
     }()
 
+    var buttonTapHandler: (ExamItem) -> Void = { _ in }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         confgireUI()
@@ -59,19 +68,51 @@ class ExamTableCell: UITableViewCell {
     }
     
     @IBAction func tapFirstButton(_ sender: Any) {
-        print("tap1")
+        buttonTapHandler(.first)
+        allViews.forEach {
+            if $0 == firstView {
+                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+            }
+            else {
+                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+            }
+        }
     }
     
     @IBAction func tapSecondButton(_ sender: Any) {
-        print("tap2")
+        buttonTapHandler(.second)
+        allViews.forEach {
+            if $0 == secondView {
+                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+            }
+            else {
+                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+            }
+        }
     }
     
     @IBAction func tapThirdButton(_ sender: Any) {
-        print("tap3")
+        buttonTapHandler(.third)
+        allViews.forEach {
+            if $0 == thirdView {
+                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+            }
+            else {
+                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+            }
+        }
     }
     
     @IBAction func tapFourthButton(_ sender: Any) {
-        print("tap4")
+        buttonTapHandler(.fourth)
+        allViews.forEach {
+            if $0 == fourthView {
+                $0?.backgroundColor = UIColor(red: 215/255, green: 215/255, blue: 215/255, alpha: 1.0)
+            }
+            else {
+                $0?.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+            }
+        }
     }
 }
 

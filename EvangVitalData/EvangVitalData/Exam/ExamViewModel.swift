@@ -33,4 +33,26 @@ extension ExamViewModel {
         let exam = Exam(contents: filtteredVitals, type: type)
         return exam
     }
+    
+    func selectItem(card: Int, row: Int) {
+        
+        if card == 0 {
+            var updateExam = exams[0]
+            updateExam.selectedAnswer = updateExam.answers[row]
+            let newExams = [updateExam, exams[1], exams[2]]
+            self.exams = newExams
+        }
+        else if card == 1 {
+            var updateExam = exams[1]
+            updateExam.selectedAnswer = updateExam.answers[row]
+            let newExams = [exams[0], updateExam, exams[2]]
+            self.exams = newExams
+        }
+        else {
+            var updateExam = exams[2]
+            updateExam.selectedAnswer = updateExam.answers[row]
+            let newExams = [exams[0], exams[1], updateExam]
+            self.exams = newExams
+        }
+    }
 }
