@@ -25,7 +25,6 @@ struct APIRequest {
             
             do {
                 let result = try JSONDecoder().decode(Result.self, from: jsonData)
-//                print(result)
                 success(result.vitals)
             } catch {
                 failure(error.localizedDescription)
@@ -35,12 +34,14 @@ struct APIRequest {
     }
     
     static func postScoreData(with exams: [Exam], success: @escaping (String) -> Void, failure: @escaping (String) -> Void) {
-        print("TODO: - 後ほど記述する")
+
         var request = URLRequest(url: URL(string: mainAPIHost)!)
         request.httpMethod = "POST"
         
+        let jsonDict =  createJSON(with: exams)
+        
         do {
-          let json = try JSONSerialization.data(withJSONObject: createJSON(with: exams), options: [])
+          let json = try JSONSerialization.data(withJSONObject: jsonDict, options: [])
           request.httpBody = json
         } catch {
           failure("Error: cannot create JSON from todo")
@@ -52,7 +53,7 @@ struct APIRequest {
             struct Result: Codable {
                 var message: String
             }
-            
+                        
             do {
                 let result = try JSONDecoder().decode(Result.self, from: jsonData)
                 success(result.message)
@@ -63,27 +64,39 @@ struct APIRequest {
         task.resume()
     }
     
-    static func createJSON(with exams: [Exam]) -> [[String: String]] {
-        let uuid = String(describing: UIDevice.current.identifierForVendor?.uuidString)
+    static func createJSON(with exams: [Exam]) -> [String: String] {
+        let uuid = String(describing: UIDevice.current.identifierForVendor?.uuidString ?? "")
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm"
         format.timeZone   = TimeZone(identifier: "Asia/Tokyo")
         let createdAt = format.string(from: Date())
-        var examDictionary: [[String: String]] = [[:]]
         
-        exams.forEach { exam in
-            let examID = exam.questionID
-            let examType = "nameJP"
-            let result = exam.correctAnswer == exam.selectedAnswer ? "正解" : "不正解"
-            let dict: [String: String] = [
-                "deviceID": uuid,
-                "createdAt": createdAt,
-                "examID": examID,
-                "examType": examType,
-                "result": result
-            ]
-            examDictionary.append(dict)
-        }
+        let examID1 = exams[0].questionID
+        let examID2 = exams[1].questionID
+        let examID3 = exams[2].questionID
+        
+        let examType1 = "nameJP"
+        let examType2 = "discription"
+        let examType3 = "usage"
+        
+        let result1 = exams[0].correctAnswer == exams[0].selectedAnswer ? "正解" : "不正解"
+        let result2 = exams[1].correctAnswer == exams[1].selectedAnswer ? "正解" : "不正解"
+        let result3 = exams[2].correctAnswer == exams[2].selectedAnswer ? "正解" : "不正解"
+
+        let examDictionary: [String: String] = [
+            "deviceID": uuid,
+            "createdAt": createdAt,
+            "examID1": examID1,
+            "examID2": examID2,
+            "examID3": examID3,
+            "examType1": examType1,
+            "examType2": examType2,
+            "examType3": examType3,
+            "result1": result1,
+            "result2": result2,
+            "result3": result3
+        ]
+        
         return examDictionary
     }
 }
