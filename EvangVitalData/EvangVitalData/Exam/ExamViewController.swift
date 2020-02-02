@@ -21,13 +21,15 @@ class ExamViewController: UIViewController {
     
     static func create(by vitals: [Vital]) -> UIViewController {
         let storyboard: UIStoryboard = UIStoryboard(name: "Exam", bundle: nil)//遷移先のStoryboardを設定
-        let viewController = storyboard.instantiateViewController(withIdentifier: "Exam") as! ExamViewController//遷移先のViewControllerを設定
+        let viewController = storyboard.instantiateViewController(withIdentifier: "Exam") as! ExamViewController
         viewController.viewModel = ExamViewModel(by: vitals)
         return viewController
     }
     
     lazy var customNavigationView: CustomNavigationView = {
-        let view = R.nib.customNavigationView.firstView(owner: nil)!
+        let nib = UINib(nibName: "CustomNavigationView", bundle: Bundle(for: type(of: self)))
+        let view = nib.instantiate(withOwner: self, options: nil).first as! CustomNavigationView
+        
         view.title = "本日の確認問題"
         view.leftButtonHandler = { [weak self] in
             guard let wself = self else { return }
@@ -75,7 +77,7 @@ extension ExamViewController {
     }
     
     func configureTableView() {
-        tableView.register(R.nib.examTableCell)
+        tableView.register(UINib(nibName: "ExamTableCell", bundle: nil), forCellReuseIdentifier: "ExamTableCell")
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 300
         tableView.contentInsetAdjustmentBehavior = .never
@@ -126,7 +128,7 @@ extension ExamViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.examTableCell, for: indexPath) else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ExamTableCell", for: indexPath) as! ExamTableCell
         cell.configure(by: viewModel.exams[indexPath.row], viewType: viewModel.examViewType)
         cell.selectionStyle = .none
         cell.buttonTapHandler = { [weak self] examItem in

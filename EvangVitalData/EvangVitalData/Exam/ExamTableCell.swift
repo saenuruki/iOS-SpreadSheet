@@ -61,8 +61,6 @@ class ExamTableCell: UITableViewCell {
     @IBOutlet weak var thirdViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var fourthViewHeightConstraint: NSLayoutConstraint!
 
-    
-    
     var viewType: ExamViewType = .exam
     
     lazy var allButtons: [UIButton?] = {
@@ -79,11 +77,10 @@ class ExamTableCell: UITableViewCell {
     }()
 
     var buttonTapHandler: (ExamItem) -> Void = { _ in }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         confgireUI()
-//        configureButton()
     }
 
     override func prepareForReuse() {
@@ -112,10 +109,12 @@ class ExamTableCell: UITableViewCell {
             setButtonColor(with: exam, row: 3, buttonView: fourthView)
             resultMarkImageView.isHidden = false
             if exam.correctAnswer == exam.selectedAnswer {
-                resultMarkImageView.image = R.image.icon_circle()
+//                resultMarkImageView.image = R.image.icon_circle()
+                resultMarkImageView.image = UIImage(named: "icon_circle")
             }
             else {
-                resultMarkImageView.image = R.image.icon_cross()
+//                resultMarkImageView.image = R.image.icon_cross()
+                resultMarkImageView.image = UIImage(named: "icon_cross")
             }
         }
     }

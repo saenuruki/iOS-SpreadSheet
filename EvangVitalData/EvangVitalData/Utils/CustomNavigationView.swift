@@ -20,11 +20,6 @@ class CustomNavigationView: UIView {
     
     var leftButtonHandler: () -> Void = {}
 
-//    static func create() -> CustomNavigationView {
-//        let view = R.nib.customNavigationView.firstView(owner: nil)!
-//        return view
-//    }
-
     @IBAction func tapLeftButton(_ sender: Any) {
         leftButtonHandler()
     }

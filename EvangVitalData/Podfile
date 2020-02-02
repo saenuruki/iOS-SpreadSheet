@@ -6,7 +6,6 @@ target 'EvangVitalData' do
   use_frameworks!
 
   # Pods for EvangVitalData
-  pod 'R.swift', '~> 5.0'
   pod 'SnapKit', '~> 5.0.0'
 
   target 'EvangVitalDataTests' do
