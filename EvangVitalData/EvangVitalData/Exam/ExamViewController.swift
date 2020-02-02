@@ -147,6 +147,6 @@ extension ExamViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ExamTableCell.cellHeight
+        return ExamTableCell.calcCellHeight(with: viewModel.exams[indexPath.row])
     }
 }

@@ -17,7 +17,27 @@ enum ExamItem: Int {
 
 class ExamTableCell: UITableViewCell {
     
-    static let cellHeight: CGFloat = 300
+    static func calcCellHeight(with exam: Exam) -> CGFloat {
+        let viewMargin: CGFloat = 198
+        let questionLabelHeight = calcLabelHeight(with: exam.questionText)
+        let answer1LabelHeight = calcLabelHeight(with: exam.answers[0])
+        let answer2LabelHeight = calcLabelHeight(with: exam.answers[1])
+        let answer3LabelHeight = calcLabelHeight(with: exam.answers[2])
+        let answer4LabelHeight = calcLabelHeight(with: exam.answers[3])
+        return viewMargin + questionLabelHeight + answer1LabelHeight + answer2LabelHeight + answer3LabelHeight + answer4LabelHeight
+    }
+    
+    static func calcLabelHeight(with text: String) -> CGFloat {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = text
+        label.font = .systemFont(ofSize: 17.0)
+
+        let labelWidth = UIScreen.main.bounds.width - 104
+        let rect: CGSize = label.sizeThatFits(CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude))
+
+        return rect.height
+    }
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var questionLabel: UILabel!
@@ -34,6 +54,14 @@ class ExamTableCell: UITableViewCell {
     @IBOutlet weak var thirdLabel: UILabel!
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var resultMarkImageView: UIImageView!
+    
+    @IBOutlet weak var questionLabelHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var firstViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var secondViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var thirdViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var fourthViewHeightConstraint: NSLayoutConstraint!
+
+    
     
     var viewType: ExamViewType = .exam
     
@@ -69,6 +97,7 @@ class ExamTableCell: UITableViewCell {
         thirdLabel.text = exam.answers[2]
         fourthLabel.text = exam.answers[3]
         self.viewType = viewType
+        configureSize(with: exam)
         
         switch viewType {
         case .exam:
@@ -167,6 +196,15 @@ fileprivate extension ExamTableCell {
         }
     }
     
+    func configureSize(with exam: Exam) {
+        let viewMargin: CGFloat = 26
+        questionLabelHeightConstraint.constant = calcLabelHeight(with: exam.questionText)
+        firstViewHeightConstraint.constant = calcLabelHeight(with: exam.answers[0]) + viewMargin
+        secondViewHeightConstraint.constant = calcLabelHeight(with: exam.answers[1]) + viewMargin
+        thirdViewHeightConstraint.constant = calcLabelHeight(with: exam.answers[2]) + viewMargin
+        fourthViewHeightConstraint.constant = calcLabelHeight(with: exam.answers[3]) + viewMargin
+    }
+    
     func setButtonColor(with exam: Exam, row: Int, buttonView: UIView) {
         if exam.correctAnswer == exam.answers[row] {
             buttonView.backgroundColor = UIColor(red: 215/255, green: 255/255, blue: 172/255, alpha: 1.0)
@@ -177,6 +215,18 @@ fileprivate extension ExamTableCell {
         else {
             buttonView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
         }
+    }
+    
+    func calcLabelHeight(with text: String) -> CGFloat {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = text
+        label.font = .systemFont(ofSize: 17.0)
+
+        let labelWidth = UIScreen.main.bounds.width - 104
+        let rect: CGSize = label.sizeThatFits(CGSize(width: labelWidth, height: CGFloat.greatestFiniteMagnitude))
+
+        return rect.height
     }
 }
 
