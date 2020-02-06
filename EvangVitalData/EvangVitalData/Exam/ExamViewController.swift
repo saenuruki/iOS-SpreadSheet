@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SnapKit
 
 class ExamViewController: UIViewController {
     
@@ -16,6 +15,7 @@ class ExamViewController: UIViewController {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var submitLabel: UILabel!
     @IBOutlet weak var submitButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     
     fileprivate private(set) var viewModel: ExamViewModel!
     
@@ -26,21 +26,8 @@ class ExamViewController: UIViewController {
         return viewController
     }
     
-    lazy var customNavigationView: CustomNavigationView = {
-        let nib = UINib(nibName: "CustomNavigationView", bundle: Bundle(for: type(of: self)))
-        let view = nib.instantiate(withOwner: self, options: nil).first as! CustomNavigationView
-        
-        view.title = "本日の確認問題"
-        view.leftButtonHandler = { [weak self] in
-            guard let wself = self else { return }
-            wself.navigationController?.popViewController(animated: true)
-        }
-        return view
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(customNavigationView)
         configureUI()
         configureTableView()
         viewModel.refreshExams(next: {_ in })
@@ -48,6 +35,10 @@ class ExamViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    @IBAction func tapBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tapBottomButton(_ sender: Any) {
@@ -66,10 +57,7 @@ extension ExamViewController {
     func configureUI() {
         let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
         let viewHeight = statusBarHeight + 60
-        customNavigationView.snp.makeConstraints { (make: ConstraintMaker) in
-            make.left.top.right.equalToSuperview()
-            make.height.equalTo(viewHeight)
-        }
+        headerViewHeightConstraint.constant =  viewHeight
         
         let bottomHeight = UIApplication.shared.keyWindow?.rootViewController?.view.safeAreaInsets.bottom ?? 0
         submitButtonHeightConstraint.constant = bottomHeight + 48

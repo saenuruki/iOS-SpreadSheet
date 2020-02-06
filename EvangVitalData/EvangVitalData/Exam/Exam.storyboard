@@ -55,20 +55,67 @@
                                     <constraint firstAttribute="height" constant="82" id="owy-Db-Ocp"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPF-H5-asc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="確認問題" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DcX-g2-38S">
+                                        <rect key="frame" x="173" y="67" width="68" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="E7D-lL-wiD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <color key="textColor" name="text"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYn-bE-3c2">
+                                        <rect key="frame" x="8" y="55" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="GL1-un-tKc"/>
+                                            <constraint firstAttribute="width" constant="44" id="btr-So-WYA"/>
+                                        </constraints>
+                                        <state key="normal" image="btn_navi_back"/>
+                                        <connections>
+                                            <action selector="tapBackButton:" destination="enS-Pn-C1f" eventType="touchUpInside" id="jNt-Bn-5Ba"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lba-vV-sO6">
+                                        <rect key="frame" x="0.0" y="106.5" width="414" height="0.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="iCS-63-mK7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="107" id="7F3-5C-Vw0"/>
+                                    <constraint firstAttribute="bottom" secondItem="bYn-bE-3c2" secondAttribute="bottom" constant="8" id="BuQ-5h-7qC"/>
+                                    <constraint firstItem="bYn-bE-3c2" firstAttribute="leading" secondItem="iPF-H5-asc" secondAttribute="leading" constant="8" id="C0C-2l-t3m"/>
+                                    <constraint firstAttribute="trailing" secondItem="lba-vV-sO6" secondAttribute="trailing" id="M3U-eq-1ML"/>
+                                    <constraint firstItem="DcX-g2-38S" firstAttribute="centerX" secondItem="iPF-H5-asc" secondAttribute="centerX" id="bkH-VX-Gsl"/>
+                                    <constraint firstAttribute="bottom" secondItem="lba-vV-sO6" secondAttribute="bottom" id="cZI-va-mFr"/>
+                                    <constraint firstItem="lba-vV-sO6" firstAttribute="leading" secondItem="iPF-H5-asc" secondAttribute="leading" id="knZ-dW-J4x"/>
+                                    <constraint firstItem="DcX-g2-38S" firstAttribute="centerY" secondItem="bYn-bE-3c2" secondAttribute="centerY" id="me9-sU-bsk"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="vkT-wO-S46" firstAttribute="top" secondItem="iBl-fA-GZd" secondAttribute="bottom" id="91L-dO-F4N"/>
                             <constraint firstAttribute="trailing" secondItem="vkT-wO-S46" secondAttribute="trailing" id="IWv-FJ-62J"/>
                             <constraint firstItem="BVi-en-Qdm" firstAttribute="trailing" secondItem="iBl-fA-GZd" secondAttribute="trailing" id="P2t-eP-zft"/>
+                            <constraint firstItem="iPF-H5-asc" firstAttribute="leading" secondItem="BVi-en-Qdm" secondAttribute="leading" id="SfU-6r-khY"/>
                             <constraint firstItem="vkT-wO-S46" firstAttribute="leading" secondItem="VEv-5a-fPY" secondAttribute="leading" id="lPs-pT-bi8"/>
+                            <constraint firstItem="iPF-H5-asc" firstAttribute="trailing" secondItem="BVi-en-Qdm" secondAttribute="trailing" id="ojh-4P-uXt"/>
                             <constraint firstItem="iBl-fA-GZd" firstAttribute="top" secondItem="BVi-en-Qdm" secondAttribute="top" constant="60" id="rKj-Mk-i0D"/>
                             <constraint firstAttribute="bottom" secondItem="vkT-wO-S46" secondAttribute="bottom" id="rOa-nR-ezP"/>
+                            <constraint firstItem="iPF-H5-asc" firstAttribute="top" secondItem="VEv-5a-fPY" secondAttribute="top" id="vam-Fe-Lqs"/>
                             <constraint firstItem="iBl-fA-GZd" firstAttribute="leading" secondItem="BVi-en-Qdm" secondAttribute="leading" id="zV5-qB-vUo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BVi-en-Qdm"/>
                     </view>
                     <connections>
+                        <outlet property="headerViewHeightConstraint" destination="7F3-5C-Vw0" id="xA0-QH-62Q"/>
                         <outlet property="submitButton" destination="hi0-ec-voW" id="3BR-Pt-Mtd"/>
                         <outlet property="submitButtonHeightConstraint" destination="owy-Db-Ocp" id="LkW-iq-5on"/>
                         <outlet property="submitLabel" destination="rfX-tr-VP8" id="s7b-O3-HJp"/>
@@ -82,8 +129,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn_navi_back" width="24" height="24"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

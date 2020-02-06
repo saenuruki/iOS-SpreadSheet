@@ -19,8 +19,6 @@
 		BA2BC74C23DD9868001243EB /* EvangVitalDataUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC74B23DD9868001243EB /* EvangVitalDataUITests.swift */; };
 		BA2BC75B23DD98D1001243EB /* Exam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2BC75A23DD98D1001243EB /* Exam.storyboard */; };
 		BA2BC75D23DD98EF001243EB /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC75C23DD98EF001243EB /* ExamViewController.swift */; };
-		BA2BC76123DDBC63001243EB /* CustomNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2BC76023DDBC63001243EB /* CustomNavigationView.xib */; };
-		BA2BC76323DDBC6E001243EB /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76223DDBC6E001243EB /* CustomNavigationView.swift */; };
 		BA2BC76723DDBFF8001243EB /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76623DDBFF8001243EB /* ExamViewModel.swift */; };
 		BA2BC76923DDC005001243EB /* ExamTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2BC76823DDC005001243EB /* ExamTableCell.xib */; };
 		BA2BC76B23DDC015001243EB /* ExamTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BC76A23DDC015001243EB /* ExamTableCell.swift */; };
@@ -73,8 +71,6 @@
 		BA2BC74D23DD9868001243EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA2BC75A23DD98D1001243EB /* Exam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Exam.storyboard; sourceTree = "<group>"; };
 		BA2BC75C23DD98EF001243EB /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
-		BA2BC76023DDBC63001243EB /* CustomNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationView.xib; sourceTree = "<group>"; };
-		BA2BC76223DDBC6E001243EB /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		BA2BC76623DDBFF8001243EB /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
 		BA2BC76823DDC005001243EB /* ExamTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExamTableCell.xib; sourceTree = "<group>"; };
 		BA2BC76A23DDC015001243EB /* ExamTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamTableCell.swift; sourceTree = "<group>"; };
@@ -200,8 +196,6 @@
 		BA2BC75F23DDBC24001243EB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BA2BC76023DDBC63001243EB /* CustomNavigationView.xib */,
-				BA2BC76223DDBC6E001243EB /* CustomNavigationView.swift */,
 				BA2BC76C23DEFE8B001243EB /* Constant.swift */,
 				BA2BC76E23DF03F2001243EB /* APIRequest.swift */,
 				BA2BC77923E515BE001243EB /* AlertController.swift */,
@@ -343,7 +337,6 @@
 				BA2BC73623DD9868001243EB /* LaunchScreen.storyboard in Resources */,
 				BA2BC75B23DD98D1001243EB /* Exam.storyboard in Resources */,
 				BA2BC73323DD9868001243EB /* Assets.xcassets in Resources */,
-				BA2BC76123DDBC63001243EB /* CustomNavigationView.xib in Resources */,
 				BA2BC73123DD9866001243EB /* Main.storyboard in Resources */,
 				BA2BC76923DDC005001243EB /* ExamTableCell.xib in Resources */,
 				BA2BC77423DF2647001243EB /* Colors.xcassets in Resources */,
@@ -480,7 +473,6 @@
 				BA2BC76D23DEFE8B001243EB /* Constant.swift in Sources */,
 				BA2BC75D23DD98EF001243EB /* ExamViewController.swift in Sources */,
 				BA2BC77223DF16DA001243EB /* Vital.swift in Sources */,
-				BA2BC76323DDBC6E001243EB /* CustomNavigationView.swift in Sources */,
 				BA2BC72A23DD9866001243EB /* AppDelegate.swift in Sources */,
 				BA2BC76723DDBFF8001243EB /* ExamViewModel.swift in Sources */,
 				BA2BC77823E19259001243EB /* Exam.swift in Sources */,
