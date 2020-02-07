@@ -10,6 +10,6 @@ import Foundation
 
 struct Constant {
 
-    static let sheetURL: String = "https://script.google.com/macros/s/AKfycby5k3w0ujwp2LPaCIKWEShsV_x3W6hlXh87TUCB6hdF_5MRswg/exec"
+    static let sheetURL: String = "https:// ** APIサーバーのURL **"
 
 }
