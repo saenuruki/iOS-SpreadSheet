@@ -21,7 +21,7 @@ iOSアプリは、シートのデータを「読み取り」、確認問題を�
 ### 1. スプレッドシートの上部の「ツール」から「スクリプト エディタ」を選択し、GASコンソール画面に移動します。
 ![gas-1](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-1.png)
 
-### 2. 本リポジトリ内の `webAPI.gs` をGASコンソール画面に貼り付けます。
+### 2. 本リポジトリ内の `webAPI.gs` をGASコンソール画面に貼り付けます。(適宜参照する行や列は変更してください)
 ![gas-2](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-2.png)
 
 ### 3. 上部「ファイル」から「版を管理...」を選択し、現在のスクリプトのバージョンを管理します。
@@ -40,20 +40,21 @@ iOSアプリは、シートのデータを「読み取り」、確認問題を�
 
 ## iOSアプリの使い方
 
-/EvangVitalData/EvangVitalData.xcodeproj Xcodeのプロジェクトファイルを起動する。
+### 1. Xcodeのプロジェクトファイルを開きます。
+![ios-1](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/ios-1.png)
 
-EvangVitalData > General > Targets[EvangVitalData] > Identity
+### 2. 赤枠のアプリ設定情報を入力します。
+![ios-2](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/ios-2.png)
 
-Display Name: アプリ名 (例：EvangVitalData)
+### 3. `Constant.swift` に先ほどコピーした `Web App URL` を貼り付けます。
+![ios-3](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/ios-3.png)
 
-Bundle Indentifier: 一意のID (例：com.myapp.EvangVitalData)
+### 4. 赤枠のボタンを押すと、シミュレーターが起動します。
+![ios-4](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/ios-4.png)
 
-Version: 1.0
 
-Build: 1
+### 最後に
 
-/EvangVitalData/EvangVitalData/Utils/Constant.swift
-
-static let sheetURL: String = "https://script.google.com/macros/s/AKf \* \* \* \* \* \* \* \* \* \* \* \* \* \* swg/exec"
-
-⌘ + R
+AppStoreに現在公開中です。
+是非遊んでみてください。
+URL：[https://apps.apple.com/jp/app/evangvitaldata/id1497444016](https://apps.apple.com/jp/app/evangvitaldata/id1497444016)
