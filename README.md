@@ -18,6 +18,25 @@ iOSアプリは、シートのデータを「読み取り」、確認問題を�
 
 ## GASのAPI公開の仕方
 
+### 1. スプレッドシートの上部の「ツール」から「スクリプト エディタ」を選択し、GASコンソール画面に移動します。
+![gas-1](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-1.png)
+
+### 2. 本リポジトリ内の `webAPI.gs` をGASコンソール画面に貼り付けます。
+![gas-2](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-2.png)
+
+### 3. 上部「ファイル」から「版を管理...」を選択し、現在のスクリプトのバージョンを管理します。
+![gas-3](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-3.png)
+
+### 4. 「Save new version」を選択し、最新のバージョンを作成したら、「OK」を押して閉じます。
+![gas-4](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-4.png)
+
+### 5. 上部「公開」から「ウェブアプリケーションとして導入...」を選択し、外部からリクエストに応答出来るようにします。
+![gas-5](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-5.png)
+
+### 6. `Create web app URL` が公開されるURLとなるため、メモしておきます。最新の版であることを確認し、「更新」を押します。
+![gas-6](https://github.com/saenuruki/iOS-SpreadSheet/blob/master/images/gas-6.png)
+
+
 
 ## iOSアプリの使い方
 
